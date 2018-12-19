@@ -1,0 +1,6 @@
+@import '../../libs/common';
+
+/* Fixed footer */
+.cpa-wrapper {
+    min-height: calc(100vh - #{$footer-height});
+}

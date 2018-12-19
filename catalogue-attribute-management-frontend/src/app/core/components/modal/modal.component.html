@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left" id="uploadModalLabel">{{title}}</h4>
+  <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div [innerHTML]="content | safeHtml"></div>
+</div>
+
+<div class="modal-footer">
+  <ng-container *ngIf="footerFormat === 'ok'">
+    <button type="button" class="btn btn-advanced" (click)="bsModalRef.hide()">OK</button>
+  </ng-container>
+
+  <ng-container *ngIf="footerFormat === 'yes_no'">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">No</button>
+    <button type="button" class="btn btn-advanced" (click)="bsModalRef.hide()">Yes</button>
+  </ng-container>
+
+  <ng-container *ngIf="footerFormat === 'text_form'">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Cancel</button>
+    <button type="button" class="btn btn-advanced" (click)="bsModalRef.hide()">Submit</button>
+  </ng-container>
+
+  <ng-container *ngIf="footerFormat === 'custom_action'">
+    <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{actionText[0]}}</button>
+    <button type="button" class="btn btn-advanced" (click)="bsModalRef.hide()">{{actionText[1]}}</button>
+  </ng-container>
+</div>
+

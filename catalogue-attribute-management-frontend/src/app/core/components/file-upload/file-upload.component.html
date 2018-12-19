@@ -1,0 +1,15 @@
+<mosaic-button icon="send_file" color="advanced" class="mr-2 mb-1" click="openFileUploader($event)" disabled="{{!isEnabled}}">
+  {{'COMMON.UPLOAD' | translate}}
+  <input id="upload-cpa-input" type="file" (change)="onFileUpload($event)" accept=".txt,.csv,.xls,.xlsx" [hidden]="true" hidden>
+</mosaic-button>
+
+<div [hidden]="!attachment" class="upload-confirmation__wrap mb-1">
+  <div class="upload-confirmation__filename mr-2" *ngIf="attachment">
+    <strong>File selected:</strong>
+    <span title="{{attachment?.name}}">{{attachment?.name | trim:20}}</span>
+  </div>
+  <span (click)="resetUploadAttachment()"><svg class="icon" width="20" height="20"><use xlink:href='#cross' href='#cross'></use></svg></span>
+  <mosaic-button color="success" xs click="submitUpload()">
+    {{'COMMON.CONFIRM' | translate}}
+  </mosaic-button>
+</div>

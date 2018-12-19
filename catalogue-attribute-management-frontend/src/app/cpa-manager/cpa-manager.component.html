@@ -1,0 +1,49 @@
+<mosaic-page>
+  <mosaic-main-container fluid>
+    <mosaic-card>
+      <mosaic-card-body>
+        <mosaic-row>
+          <mosaic-col lg="12">
+            <div class="mb-1">
+              <h1 class="page-header">{{'PAGE_TITLES.CPA_MANAGER' | translate}}</h1>
+            </div>
+            <div class="mb-2">
+              <p>{{'CPA_MANAGER.INSTRUCTIONS' | translate}}</p>
+              <app-supplier-dropdown [suppliers]="(suppliers$ | async)" [propertyName]="'name'" [placeholder]="dropdownPlaceholder"
+                                     (supplier)="updateSupplier($event)" (newPlaceholder)="updatePlaceholder($event)" (supplierSelected)="enableUploadBtn($event)"></app-supplier-dropdown>
+            </div>
+            <div class="mb-2">
+              <pre class="card card-block card-header" *ngIf="value">Event select is fired. The heading of the selected tab is: {{value}}</pre>
+            </div>
+            <div>
+              <mosaic-tabs>
+                <mosaic-tab-pane title="{{'COMMON.DOWNLOAD' | translate}}">
+                  <div>
+                    <!-- dropdown was here -->
+                    <div class="mb-1">
+                      <app-file-export [isEnabled]="supplierSelected"></app-file-export>
+                    </div>
+                    <app-download-table [downloads]="(downloads$ | async)"></app-download-table>
+                  </div>
+                </mosaic-tab-pane>
+                <mosaic-tab-pane title="{{'COMMON.UPLOAD' | translate}}">
+                  <div>
+                    <!-- dropdown was here -->
+                    <div class="mb-1">
+                      <mosaic-button class="mr-2 mb-1" color="default" ouline icon="file" href="{{getDownloadTemplateUrl()}}">
+                        {{'CPA_MANAGER.DOWNLOAD_TEMPLATE' | translate}}
+                      </mosaic-button>
+                      <app-file-upload [isEnabled]="supplierSelected"></app-file-upload>
+                    </div>
+                    <app-upload-table [reports]="(reports$ | async)"></app-upload-table>
+                  </div>
+                </mosaic-tab-pane>
+              </mosaic-tabs>
+            </div>
+          </mosaic-col>
+        </mosaic-row>
+      </mosaic-card-body>
+    </mosaic-card>
+  </mosaic-main-container>
+</mosaic-page>
+

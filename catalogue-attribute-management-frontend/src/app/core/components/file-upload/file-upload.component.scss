@@ -1,0 +1,17 @@
+@import '../../../../libs/colors.scss';
+
+.upload-confirmation {
+    &__wrap {
+
+        color: $disabled;
+
+        svg {
+            fill: $danger;
+            cursor: pointer;
+        }
+    }
+    &__filename {
+        display: inline;
+        margin-left: .5rem;
+    }
+}

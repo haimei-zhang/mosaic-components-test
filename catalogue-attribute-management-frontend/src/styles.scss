@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+@import "libs/colors";
+
+/*spinner*/
+.mosaic-spinner {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.mosaic-loading:before {
+  margin-top: -112px;
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  content: "";
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCAzOCAzOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBzdHJva2U9IiNlOTUxMGUiPiAgICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMSAxKSIgc3Ryb2tlLXdpZHRoPSIyIj4gICAgICAgICAgICA8Y2lyY2xlIHN0cm9rZS1vcGFjaXR5PSIuMiIgY3g9IjE4IiBjeT0iMTgiIHI9IjE4Ii8+ICAgICAgICAgICAgPHBhdGggZD0iTTM2IDE4YzAtOS45NC04LjA2LTE4LTE4LTE4Ij4gICAgICAgICAgICAgICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIGZyb209IjAgMTggMTgiIHRvPSIzNjAgMTggMTgiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+ICAgICAgICAgICAgPC9wYXRoPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+) center center no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+  .mosaic-loading:before {
+    margin-top: -187px;
+  }
+}
+
+/*global*/
+[hidden] {
+  display: none !important;
+}
+svg:not(:root) {
+  vertical-align: middle;
+}
+.mr {
+  &-1 {
+    margin-right: .5rem;
+  }
+  &-2 {
+    margin-right: .8rem;
+  }
+}
+.mx {
+  &-1 {
+    margin-right: .5rem;
+    margin-left: .5rem;
+  }
+  &-2 {
+    margin-right: .8rem;
+    margin-left: .8rem;
+  }
+}
+.status {
+  &-failed {
+    color: $danger;
+    fill: currentColor;
+  }
+  &-success {
+    color: $success;
+    fill: currentColor;
+  }
+}
+.btn-file {
+  position: relative;
+  overflow: hidden;
+
+  input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+  }
+}
+
+.table-striped > tbody > tr {
+    transition: background-color .2s ease;
+    
+    &:hover {
+        background-color: darken(#fff, 3);
+    }
+    &:nth-of-type(odd):hover {
+        background-color: darken(#f9f9f9, 3);
+    }
+}
