@@ -11,8 +11,6 @@ import { CpaManagerComponent } from './cpa-manager.component';
 import { UploadTableComponent } from './components/upload-table/upload-table.component';
 import { DownloadTableComponent } from './components/download-table/download-table.component';
 
-import { CpaManagerService } from './service/cpa-manager.service';
-
 import { reducers } from './store/reducers';
 import { effects } from './store/effects';
 import { TranslateModule } from '@ngx-translate/core';
@@ -35,7 +33,6 @@ import { TranslateModule } from '@ngx-translate/core';
   exports: [
     CpaManagerComponent
   ],
-  providers: [CpaManagerService],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ]

@@ -6,6 +6,7 @@ import { ContractReferenceManagerComponent } from './contract-reference-manager.
   declarations: [ContractReferenceManagerComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [ContractReferenceManagerComponent]
 })
 export class ContractReferenceManagerModule { }

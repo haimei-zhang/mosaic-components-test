@@ -6,6 +6,7 @@ import { TagManagerComponent } from './tag-manager.component';
   declarations: [TagManagerComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [TagManagerComponent]
 })
 export class TagManagerModule { }
