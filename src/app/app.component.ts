@@ -18,7 +18,7 @@ export class AppComponent {
 
   constructor(private translateService: TranslateService,
               private loadingIndicatorService: LoadingIndicatorService) {
-    loadingIndicatorService.onLoadingChanged.subscribe(isLoading => setTimeout(()=> this.isLoading = isLoading, 0));
+    loadingIndicatorService.onLoadingChanged.subscribe(isLoading => setTimeout(() => this.isLoading = isLoading, 0));
 
     translateService.setDefaultLang(defaultLanguage);
     translateService.setTranslation('en', EN);
