@@ -42,7 +42,8 @@ import { TrimPipe } from './pipe/trim.pipe';
     SupplierDropdownComponent,
     MosaicIconsComponent,
     FileExportComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    FooterComponent
   ],
   entryComponents: [
     ModalComponent
