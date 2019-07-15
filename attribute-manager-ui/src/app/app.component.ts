@@ -12,7 +12,7 @@ import { defaultLanguage } from './core/models/translate.model';
 })
 export class AppComponent {
   title: string;
-  isLoading: boolean = false;
+  isLoading = false;
 
   constructor(private translateService: TranslateService,
               private loadingIndicatorService: LoadingIndicatorService) {
